@@ -13,7 +13,7 @@ def main
         5 - Create a rental
         6 - List all rentals for a given person id
         7 - Exit"
-    choice = gets.chomp.to_i
+    choice = gets.chomp
 
     break if choice == 7
 
