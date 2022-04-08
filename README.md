@@ -1,10 +1,13 @@
 # OOP-school-library
 
 > This project is a tool to record what books are in a library and who borrows them. The app allows users you to:
->- Add new students or teachers.
->- Add new books.
->- Save records of who borrowed a given book and when.
->And all of this is built in a beautiful and well-organized way!
+>
+> - Add new students or teachers.
+> - Add new books.
+> - Save records of who borrowed a given book and when.
+>   And all of this is built in a beautiful and well-organized way!
+
+![console app](./screenshot.gif)
 
 ## Built With
 
@@ -12,37 +15,47 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example st
+To get a local copy up and running follow these simple steps
 
 ### Prerequisites
+
 - `ruby` required for running the code.
 - `gem` required for linters.
 
 ### Setup
 
 Run the following command in your terminal to clone this repo to your local machine
+
 ```bash
-> git@github.com:Sahar-AbdelSamad/OOP-school-library.git
+$ git@github.com:Sahar-AbdelSamad/OOP-school-library.git
 ```
+
 Change directory into the newly created project
+
 ```bash
-> cd OOP-school-library
+$ cd OOP-school-library
 ```
 
 ### Usage
 
+#### In the project directory you can run the following command to execute the code:
 
-In the project directory you can run the following commands to execute the code:
 ```bash
-> ruby person.rb
-> ruby teacher.rb
-> ruby student.rb
+$ ruby main.rb
 ```
 
-or alternatively you can copy and paste the commands in
+#### Or alternatively
+
+#### you can add execute permissions to `main.rb` by running this command
 
 ```bash
-> irb 
+$ chmod 755 main.rb
+```
+
+#### Now the file can be run directly without calling Ruby first
+
+```bash
+$ ./main.rb
 ```
 
 ## Authors
