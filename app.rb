@@ -18,12 +18,20 @@ class App
   end
 
   def run(choice)
-    list_books if choice == 1
-    list_people if choice == 2
-    create_person if choice == 3
-    create_book if choice == 4
-    create_rental if choice == 5
-    list_rental if choice == 6
+    case choice
+    when 1
+      list_books
+    when 2
+      list_people
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      list_rental
+    end
   end
 
   def list_books
