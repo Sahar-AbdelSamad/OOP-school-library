@@ -16,9 +16,9 @@ class App
     @people = []
     @books = []
     @rents = []
-    @create_book = Create_book.new(@books)
-    @create_person = Create_person.new(@people)
-    @create_rental = Create_rental.new(@rents, @books, @people)
+    @create_book = CreateBook.new(@books)
+    @create_person = CreatePerson.new(@people)
+    @create_rental = CreateRental.new(@rents, @books, @people)
   end
 
   def run(choice)
@@ -43,9 +43,9 @@ class App
   end
 
   def list_people
-    @people.each_with_index { |person, index|
+    @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    }
+    end
   end
 
   def list_rental

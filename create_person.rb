@@ -1,11 +1,11 @@
 require './create_student'
 require './create_teacher'
 
-class Create_person
+class CreatePerson
   def initialize(person)
     @person = person
-    @create_student = Create_student.new(@person)
-    @create_teacher = Create_teacher.new(@person)
+    @create_student = CreateStudent.new(@person)
+    @create_teacher = CreateTeacher.new(@person)
   end
 
   def create_person

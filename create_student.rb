@@ -1,7 +1,7 @@
 require './student'
 require './checks'
 
-class Create_student
+class CreateStudent
   include Checks
 
   def initialize(person)

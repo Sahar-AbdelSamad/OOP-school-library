@@ -1,7 +1,7 @@
 require './book'
 require './checks'
 
-class Create_book
+class CreateBook
   include Checks
 
   def initialize(books)

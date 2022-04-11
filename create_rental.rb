@@ -2,7 +2,7 @@ require './rental'
 require './checks'
 require './app'
 
-class Create_rental
+class CreateRental
   include Checks
 
   def initialize(rents, books, people)

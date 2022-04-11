@@ -1,7 +1,7 @@
 require './teacher'
 require './checks'
 
-class Create_teacher
+class CreateTeacher
   include Checks
 
   def initialize(person)
