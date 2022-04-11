@@ -39,15 +39,11 @@ class App
   end
 
   def list_books
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: \"#{book.title}\", Author: \"#{book.author}\""
-    end
+    @books.each { |book|puts "Title: \"#{book.title}\", Author: \"#{book.author}\"" }
   end
 
   def list_people
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
+    @people.each_with_index {|person, index| puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"}
   end
 
   def list_rental
