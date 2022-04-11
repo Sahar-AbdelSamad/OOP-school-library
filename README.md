@@ -66,6 +66,12 @@ $ ./main.rb
 - Twitter: [@abdelsamadsahar](https://twitter.com/AbdelSamadSahar)
 - LinkedIn: [sahar-abdel-samad](https://www.linkedin.com/in/sahar-abdel-samad/)
 
+👤 **Fernando Herrera**
+
+- GitHub: [@fherrerao](https://github.com/fherrerao);
+- LinkedIn: [Fernando Herrera](https://www.linkedin.com/in/fherrerao/);
+- Twitter: [Fernando Herrera](https://twitter.com/fherrera0206);
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
