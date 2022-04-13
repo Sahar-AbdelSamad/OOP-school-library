@@ -8,5 +8,5 @@ describe Decorator do
 
   it 'should have a nameable' do
     expect(@decorator.nameable).to eq('Fernando')
-  end  
+  end
 end

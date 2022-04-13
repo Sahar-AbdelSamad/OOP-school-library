@@ -3,7 +3,7 @@ require '../person'
 
 describe Student do
   before(:each) do
-    @student = Student.new('1A' ,18, name: 'John', parent_permission: true)
+    @student = Student.new('1A', 18, name: 'John', parent_permission: true)
   end
 
   it 'should have a name' do
