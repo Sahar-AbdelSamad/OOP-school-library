@@ -54,13 +54,14 @@ class App
     if File.exist?('people.json')
       data = JSON.parse(File.read('people.json'), create_additions: true)
       data.each do |person|
-        if person['json_class'] == 'Student'
+        case person['json_class']
+        when 'Student'
           student = Student.new(nil, person['age'], name: person['name'],
                                                     parent_permission: person['parent_permission'])
 
           student.id = person['id']
           @people.push(student)
-        elsif person['json_class'] == 'Teacher'
+        when 'Teacher'
           teacher = Teacher.new(person['specialization'], person['age'], name: person['name'])
           teacher.id = person['id']
           @people.push(teacher)
@@ -71,12 +72,18 @@ class App
     end
   end
 
+  def load_files
+    load_books
+    load_people
+    load_rentals
+  end
+
   def load_rentals
     if File.exist?('rentals.json')
       data = JSON.parse(File.read('rentals.json'), create_additions: true)
       data.map do |rentals|
-        person = @people.find { |person| person.id == rentals['id_people'] }
-        book = @books.find { |book| book.title == rentals['book_title'] }
+        person = @people.find { |people| people.id == rentals['id_people'] }
+        book = @books.find { |books| books.title == rentals['book_title'] }
         @rents.push(Rental.new(rentals['date'], book, person))
       end
     else
