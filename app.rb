@@ -7,6 +7,7 @@ require './checks'
 require_relative 'create_book'
 require_relative 'create_person'
 require './create_rental'
+require 'json'
 
 class App
   include Checks
@@ -38,7 +39,18 @@ class App
     end
   end
 
-  def list_books
+  def load_books
+    if File.exist?('books.json')
+      data = JSON.parse(File.read('books.json'), create_additions: true)
+      data.each do |book|
+        @books.push(Book.new(book['title'], book['author']))
+      end
+    else
+      []
+    end
+  end
+
+  def list_books    
     @books.each { |book| puts "Title: \"#{book.title}\", Author: \"#{book.author}\"" }
   end
 
@@ -56,4 +68,8 @@ class App
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n" if id == rental.person.id
     end
   end
+
+  def save_files
+    File.write('books.json', JSON.generate(@books))    
+    end 
 end
