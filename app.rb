@@ -50,7 +50,25 @@ class App
     end
   end
 
-  def list_books    
+  def load_people
+    if File.exist?('people.json')
+      data = JSON.parse(File.read('people.json'), create_additions: true)
+      data.each do |person|
+        if person['json_class'] == 'Student'
+          student = Student.new(nil, person['age'], name: person['name'],
+                                                    parent_permission: person['parent_permission'])
+          @people.push(student)
+        elsif person['json_class'] == 'Teacher'
+          teacher = Teacher.new(person['specialization'], person['age'], name: person['name'])
+          @people.push(teacher)
+        end
+      end
+    else
+      []
+    end
+  end
+
+  def list_books
     @books.each { |book| puts "Title: \"#{book.title}\", Author: \"#{book.author}\"" }
   end
 
@@ -70,6 +88,7 @@ class App
   end
 
   def save_files
-    File.write('books.json', JSON.generate(@books))    
-    end 
+    File.write('books.json', JSON.generate(@books))
+    File.write('people.json', JSON.generate(@people))
+  end
 end
