@@ -57,11 +57,27 @@ class App
         if person['json_class'] == 'Student'
           student = Student.new(nil, person['age'], name: person['name'],
                                                     parent_permission: person['parent_permission'])
+
+          student.id = person['id']
           @people.push(student)
         elsif person['json_class'] == 'Teacher'
           teacher = Teacher.new(person['specialization'], person['age'], name: person['name'])
+          teacher.id = person['id']
           @people.push(teacher)
         end
+      end
+    else
+      []
+    end
+  end
+
+  def load_rentals
+    if File.exist?('rentals.json')
+      data = JSON.parse(File.read('rentals.json'), create_additions: true)
+      data.map do |rentals|
+        person = @people.find { |person| person.id == rentals['id_people'] }
+        book = @books.find { |book| book.title == rentals['book_title'] }
+        @rents.push(Rental.new(rentals['date'], book, person))
       end
     else
       []
@@ -90,5 +106,6 @@ class App
   def save_files
     File.write('books.json', JSON.generate(@books))
     File.write('people.json', JSON.generate(@people))
+    File.write('rentals.json', JSON.generate(@rents))
   end
 end
