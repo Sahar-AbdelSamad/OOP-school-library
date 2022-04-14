@@ -1,4 +1,4 @@
-require '../teacher'
+require_relative '../teacher'
 describe Teacher do
   before(:each) do
     @teacher = Teacher.new('Maths', 18, name: 'John', parent_permission: true)

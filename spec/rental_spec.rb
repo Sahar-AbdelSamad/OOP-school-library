@@ -1,6 +1,6 @@
-require '../rental'
-require '../person'
-require '../book'
+require_relative '../rental'
+require_relative '../person'
+require_relative '../book'
 describe Rental do
   before(:each) do
     @person = Person.new(18, name: 'John', parent_permission: true)

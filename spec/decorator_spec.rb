@@ -1,5 +1,5 @@
-require '../decorator'
-require '../nameable'
+require_relative '../decorator'
+require_relative '../nameable'
 
 describe Decorator do
   before(:each) do

@@ -1,5 +1,5 @@
-require '../student'
-require '../person'
+require_relative '../student'
+require_relative '../person'
 
 describe Student do
   before(:each) do
